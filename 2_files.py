@@ -16,7 +16,17 @@ def main():
     Эта функция вызывается автоматически при запуске скрипта в консоли
     В ней надо заменить pass на ваш код
     """
-    pass
+with open('referat.txt', 'r', encoding='utf-8') as text:
+    content = str(text.read())
+    print("Количество символов в файле ", len(content))
+    print("Количество слов в файле ", len(content.split()))
+
+with open('referat2.txt', 'w', encoding='utf-8') as text2:
+    text2.write(content.replace(".", "!"))
+    
+
 
 if __name__ == "__main__":
     main()
+
+#Кол-во знаков, посчитанное вордом - 1505, а программа возвращает 1509.
